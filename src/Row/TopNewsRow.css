@@ -1,0 +1,15 @@
+.topNewsRow{
+    margin-left: 20px;
+}
+
+.topNewsRow_posters{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.topNewsRow_newsPoster{
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
