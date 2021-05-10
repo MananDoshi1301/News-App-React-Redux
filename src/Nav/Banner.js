@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css';
-import starterImg from '../starterImg4.jpg';
+import starterImg from '../starterImg3.jpg';
 import Typed from 'react-typed';
 
 const Banner = () => {
@@ -12,11 +12,11 @@ const Banner = () => {
         }}>
 
             <Typed
-                strings={['Find all Your<br> Stories', 'Find all Your<br> Articles', 'Find Your<br> News...!']}
+                strings={['Find All<br> Stories...', 'Find All<br> Articles...', 'Find All<br> Reviews...', 'Find Your<br> News...!']}
                 typeSpeed={60}
-                backSpeed={50}
+                backSpeed={60}
                 backDelay={1200}
-                // loop
+                loop
                 className="banner_TypeWriter"
                 smartBackspace
             />
