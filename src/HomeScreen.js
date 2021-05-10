@@ -9,12 +9,16 @@ const HomeScreen = () => {
         <>
             <Nav />
             <Banner />
-            <TopNewsRow 
-            title={'Top Headlines: India'}
-            fetchUrl={requests.fetchTopHeadlinesIndia}
+            <TopNewsRow
+                title={'Top Headlines: India'}
+                fetchUrl={requests.fetchTopHeadlinesIndia}
+            />
+            <TopNewsRow
+                title={'Top Headlines: United States'}
+                fetchUrl={requests.fetchTopHeadlinesUS}
             />
         </>
-    )   
+    )
 }
 
 export default HomeScreen
