@@ -35,7 +35,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
                 />
                 <div className="topNewsRow_cardContent">
                   <div className="topNewsRow_newsTitle">
-                    {truncate(news.title, 160)}
+                    {truncate(news.title, 140)}
                   </div>
                   <div className="topNewsRow_authorDetails">
                     <div className="topNewsRow_authorDetails_source">
