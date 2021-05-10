@@ -24,7 +24,21 @@
   top: 10px;
   padding-left: 20px;
   padding-top: 10px;
-  width: 40px;
+  width: 50px;
   object-fit: contain;
   cursor: pointer;
+}
+
+.nav_brand {
+  position: fixed;
+  left: 80px;
+  top: 10px;
+  padding-top: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #006db6;
+}
+
+.nav_brandScrolled {
+  color: white;
 }
