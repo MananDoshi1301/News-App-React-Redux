@@ -19,26 +19,32 @@ const TopNewsRow = ({ title, fetchUrl }) => {
     <div className="topNewsRow">
       <h1 className="topNewsRow_title">{title}</h1>
       <div className="topNewsRow_posters">
-        {topNews.map((news) => (
-          <div className="topNewsRow_card">
-            <img
-              className={`topNewsRow_newsPoster`}
-              src={news.urlToImage}
-              alt={"    "}
-            />
-            <div className="topNewsRow_cardContent">
-              <h3>{news.title}</h3>
-              <div className="topNewsRow_authorDetails">
-                <span className="topNewsRow_authorDetails_source">
-                  {news?.source.name}
-                </span>
-                <span className="topNewsRow_authorDetails_author">
-                  {news.author ? ", " + news.author : ""}
-                </span>
+        {topNews.map((news) => {
+          if (news.urlToImage) {
+            return (<div className="topNewsRow_card">
+              <img
+                className={`topNewsRow_newsPoster`}
+                src={news.urlToImage}
+                alt={"    "}
+              />
+              <div className="topNewsRow_cardContent">
+                <div>{news.title}</div>
+                <div className="topNewsRow_authorDetails">
+                  <span className="topNewsRow_authorDetails_source">
+                    {news?.source.name}
+                  </span>
+                  <span className="topNewsRow_authorDetails_author">
+                    {news.author ? ", " + news.author : ""}
+                  </span>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </div>);
+          }
+          else {
+
+          }
+
+        })}
       </div>
     </div>
   );
