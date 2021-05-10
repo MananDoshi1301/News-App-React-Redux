@@ -26,20 +26,24 @@
 
 .topNewsRow_newsPoster {
   height: 150px;
+  width: 250px;
   border-radius: 25px 25px 5px 5px;
 }
 
 .topNewsRow_cardContent {
   padding: 10px;
+  height: 170px;
+  position: relative;
 }
 
 .topNewsRow_authorDetails {
-  margin-top: 20px;
 }
 
 .topNewsRow_authorDetails_source {
   font-weight: 600;
   font-size: 1.2rem;
+  position: absolute;
+  bottom: 10px;
 }
 
 .topNewsRow_authorDetails_author {

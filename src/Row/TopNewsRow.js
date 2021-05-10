@@ -3,7 +3,9 @@ import "./TopNewsRow.css";
 import axios from "../axios";
 
 const TopNewsRow = ({ title, fetchUrl }) => {
+
   const [topNews, setTopNews] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
@@ -13,6 +15,10 @@ const TopNewsRow = ({ title, fetchUrl }) => {
 
     fetchData();
   }, []);
+
+  const truncate = (string, n) => {
+    return string.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
 
   console.log(topNews);
   return (
@@ -28,14 +34,11 @@ const TopNewsRow = ({ title, fetchUrl }) => {
                 alt={"    "}
               />
               <div className="topNewsRow_cardContent">
-                <div>{news.title}</div>
+                <div>{truncate(news.title, 160)}</div>
                 <div className="topNewsRow_authorDetails">
-                  <span className="topNewsRow_authorDetails_source">
-                    {news?.source.name}
-                  </span>
-                  <span className="topNewsRow_authorDetails_author">
-                    {news.author ? ", " + news.author : ""}
-                  </span>
+                  <div className="topNewsRow_authorDetails_source">
+                    {news.source.name ? "- " + news.source.name : ""}
+                  </div>
                 </div>
               </div>
             </div>);
