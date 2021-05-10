@@ -46,7 +46,6 @@ const TopNewsRow = ({ title, fetchUrl }) => {
                 </div>
               </div>
             );
-          } else {
           }
         })}
       </div>
