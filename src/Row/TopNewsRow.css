@@ -28,13 +28,13 @@
 }
 
 .topNewsRow_card:hover {
-  transform: translate(-2%, -2%) scale(1.01);
+  transform: translate(-2%, -2%) scale(1.005);
   box-shadow: 7px 7px 10px grey;
 }
 
 .topNewsRow_newsPoster {
   height: 150px;
-  width: 250px;
+  width: 300px;
   border-radius: 25px 25px 5px 5px;
 }
 
