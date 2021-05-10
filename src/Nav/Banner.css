@@ -1,3 +1,11 @@
-.banner{
-    height: 850px;
+.banner {
+  height: 850px;
+}
+
+.banner_TypeWriter {
+  position: absolute;
+  left: 200px;
+  top: 170px;
+  font-weight: 1000;
+  font-size: 4rem;
 }
