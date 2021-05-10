@@ -1,11 +1,12 @@
 .topNewsRow {
   margin-left: 20px;
   padding-right: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .topNewsRow_title {
   margin-top: 40px;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 1000;
 }
 
@@ -66,4 +67,31 @@
 
 .topNewsRow_card:hover .topNewsRow_storyLink {
   transform: translateX(12px);
+}
+
+/* ScrollBar */
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 10px;
+  width: 20px;
+  /* transition: all 0.7s; */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdd5ea;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4596cc;
+}
+
+::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar-track {
+  background: #bdd5ea;
 }
