@@ -1,12 +1,23 @@
-import React from 'react';
-import './App.css';
-import HomeScreen from './HomeScreen';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import HomeScreen from "./HomeScreen";
+import SearchPage from "./SearchPage/SearchPage";
 
 function App() {
   return (
-    <div className="App">
-      <HomeScreen />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact to="/">
+            <HomeScreen />
+          </Route>
+          <Route exact to="/search">
+            <SearchPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
