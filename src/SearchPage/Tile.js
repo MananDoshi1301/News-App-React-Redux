@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Tile.css";
-const Tile = () => {
+const Tile = ({title, icon, color}) => {
     return (
-        <div className="tile">
-            <i class="far fa-futbol"></i>
-            <div>Sports</div>
+        <div className={`tile ${color}`}>            
+            <div className='tile_title'>
+                <i className={`${icon}`}></i>&nbsp;{title}
+                <p className='tile_description'></p>
+            </div>
         </div>
     )
 }
