@@ -2,12 +2,19 @@ import React from 'react';
 import Tile from './Tile';
 import './SearchTiles.css';
 
-const SearchTiles = () => {
+const SearchTiles = ({category}) => {
+    let arr = ['type1', 'type2', 'type3', 'type4'];
+    let randomItem = () => {
+        let index = Math.floor(Math.random()*arr.length);                
+        let colClass = arr[index];             
+        return colClass;
+    } 
     return (
         <div className="searchTile">
-            <Tile />
-            <Tile />
-            <Tile />
+            {category.map((category)=>{
+                let val = randomItem();                                
+                return <Tile title={category.title} icon={category.icon} color={val} />
+            })}
         </div>
     )
 }
