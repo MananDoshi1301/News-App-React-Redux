@@ -1,7 +1,7 @@
 .searchBar{
     display: flex;
     justify-content: space-between;
-    margin: 20px 20px 20px 40px;
+    /* margin: 20px 20px 20px 40px; */
     width: 1450px;
 }
 
