@@ -28,8 +28,8 @@
 }
 
 .topNewsRow_card:hover {
-  transform: translate(-2%, -2%) scale(1.005);
-  box-shadow: 7px 7px 10px grey;
+  /* transform: translate(-2%, -2%) scale(1.005); */
+  box-shadow: 10px 10px 15px grey;
 }
 
 .topNewsRow_newsPoster {
