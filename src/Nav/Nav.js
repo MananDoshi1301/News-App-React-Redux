@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 import "./Nav.css";
 import appLogo from "../appLogo.png";
 
@@ -18,10 +19,10 @@ const Nav = () => {
   }, []);
   return (
     <div className={`nav ${isScrolled ? "nav_dark nav_brandScrolled" : ""}`}>
-      <div className="nav_content">
+      <Link to={'/'} className="nav_content">
         <img className={`nav_logo`} src={appLogo} alt="" />
         <div className={`nav_brand`}>News Express</div>
-      </div>
+      </Link>
     </div>
   );
 };
