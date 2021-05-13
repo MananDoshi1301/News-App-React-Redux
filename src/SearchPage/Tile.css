@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 30%; 
+    width: 22%; 
 
     height: 200px;    
     padding: 5px;
@@ -18,7 +18,7 @@
 }
 
 .tile_title, .tile_icon{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .tile_description{
