@@ -8,7 +8,7 @@ const SearchResult = () => {
     return (
         <div>
             <Nav/>
-            <section className={`searchResult`}>
+            <section className={`searchResult`} style={{width:'95%'}}>
                 <LeftResult />
                 <CenterResult />
             </section>
