@@ -9,6 +9,7 @@ const SearchTiles = ({category}) => {
         let colClass = arr[index];             
         return colClass;
     } 
+    category.sort(()=>Math.random() - 0.5);
     return (
         <div className="searchTile">
             {category.map((category)=>{
