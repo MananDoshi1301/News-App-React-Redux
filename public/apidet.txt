@@ -32,5 +32,23 @@ For Searching:
             eg: https://newsapi.org/v2/everything?q=apple&from=2021-05-12&to=2021-05-12&sortBy=popularity&apiKey=API_KEY
 
 
+Some News Sources::
+bbc-news //
+the-times-of-india
+the-washington-times
+cnn // 
 
+Techcrunch //
 
+next-big-future //
+
+crypto-coins-news //
+business-insider //
+the-wall-street-journal //
+
+mtv-news //
+mtv-news-uk
+
+fox-sports //
+four-four-two //
+espn-cric-info //
