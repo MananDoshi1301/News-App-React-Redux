@@ -3,15 +3,26 @@
     top: 110px;
     width: 25%;
     float: left;
-    margin-right: 20px;   
+    margin-right: 3%;   
     
     display: flex;
     justify-content: flex-end;
-
+    font-family: "Poppins", sans-serif;
 }
 
 .leftCont{
-    width: 70%;
+    width: 60%;
+    padding: 20px;
     background-color: pink;
+    border-radius: 20px;
+    margin: 10px;
+}
 
+.leftResult_title{
+    font-size: 2.5rem;
+}
+
+.leftResult_list{
+    margin-top: 10px;
+    font-size: 1.3rem;
 }
