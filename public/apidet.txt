@@ -8,3 +8,29 @@ Sources:
 If you want headlines just from a specific source, for example BBC News, we can do that too.
 -- https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY
 
+
+For Searching:
+# axios/everything?
+
+## q = Search in article,title,body
+    For exact use ""
+    eg: https://newsapi.org/v2/everything?q=bitcoin&apiKey=API_KEY
+
+## qinTitle = Search only in title
+## sources = A comma-seperated str of identifiers (maximum20) for the news sources or blogs you want headlines from
+## domains = A comma-seperated string of domains (eg bbc.co.uk, techcrunch.com, engadget.com) to restrict the search to
+            eg: https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=API_KEY
+
+## excludeDomains = inverse of domains
+## from = (e.g. 2021-05-13 or 2021-05-13T05:14:50) ISO 8601 format
+## to =  (e.g. 2021-05-13 or 2021-05-13T05:14:50) ISO 8601 format
+## language : from the options
+## sortBy = relevancy: articles more closely related to q come first.
+            popularity: articles from popular sources and publishers come first.
+            publishedAt: newest articles come first.
+            Default: publishedAt
+            eg: https://newsapi.org/v2/everything?q=apple&from=2021-05-12&to=2021-05-12&sortBy=popularity&apiKey=API_KEY
+
+
+
+
