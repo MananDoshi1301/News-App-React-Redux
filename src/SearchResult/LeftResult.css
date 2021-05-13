@@ -1,0 +1,17 @@
+.leftResult{
+    position: sticky;
+    top: 110px;
+    width: 25%;
+    float: left;
+    margin-right: 20px;   
+    
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.leftCont{
+    width: 70%;
+    background-color: pink;
+
+}
