@@ -1,4 +1,4 @@
-const API_KEY = "7aa27d62f4964104bad539585e0aaf61";
+import API_KEY from './API_KEY';
 
 const requests = {
     fetchTopHeadlinesIndia: `top-headlines?country=in&apiKey=${API_KEY}`,
