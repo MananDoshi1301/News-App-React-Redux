@@ -27,7 +27,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
         {topNews.map((news) => {
           if (news.urlToImage) {
             return (
-              <div className="topNewsRow_card">
+              <a className="topNewsRow_card" href={news.url} target="_blank" style={{color:'inherit', textDecoration:'none'}}>
                 <img
                   className={`topNewsRow_newsPoster`}
                   src={news.urlToImage}
@@ -44,7 +44,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
                     <i class="fas fa-arrow-circle-right topNewsRow_storyLink"></i>
                   </div>
                 </div>
-              </div>
+              </a>
             );
           }
         })}
