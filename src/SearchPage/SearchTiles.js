@@ -14,7 +14,7 @@ const SearchTiles = ({category}) => {
         <div className="searchTile">
             {category.map((category)=>{
                 let val = randomItem();                                
-                return <Tile title={category.title} icon={category.icon} color={val} />
+                return <Tile title={category.title} icon={category.icon} color={val} type={category.type} link={category.link} />
             })}
         </div>
     )
