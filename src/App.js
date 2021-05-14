@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/search">
             <SearchPage />
           </Route>
-          <Route exact path="/result">
+          <Route exact path="/result/:type/:link">
             <SearchResult />
           </Route>
         </Switch>
