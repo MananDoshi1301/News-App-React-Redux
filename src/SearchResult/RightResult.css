@@ -21,11 +21,13 @@
 
 .rightResult_title{
     font-size: 1.4rem;
-    background-color: pink;
+    background-color: #345065;
+    color: #fff;
     border-radius: 15px;
     padding: 5px;
     padding-left: 10px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-bottom: 15px;
 }
 
 .rightResult_list{
@@ -39,5 +41,5 @@
     border-radius: 10px;
     padding:2px;
     padding-left: 10px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
