@@ -52,3 +52,8 @@ mtv-news-uk
 fox-sports //
 four-four-two //
 espn-cric-info //
+
+
+//NEW YORK TIMES API SUPPORT//
+
+Books, movies
