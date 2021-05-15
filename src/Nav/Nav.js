@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Nav.css";
 import appLogo from "../appLogo.png";
 
@@ -28,9 +28,10 @@ const Nav = () => {
       </Link>
       <div className="nav_links">
         <ul className="nav_links_list">
-          <Link to={'/'} className={`nav_links_linkItem ${location[1]===''?`link_active`:''}`}>Home</Link>
-          <Link to={'/search'} className={`nav_links_linkItem ${location[1]==='search'?`link_active`:''}`}>Search</Link>
-          <Link to={'/result/top-headlines/category=general'} className={`nav_links_linkItem ${location[1]==='result'?`link_active`:''}`}>Headlines</Link>
+          <Link to={'/'} className={`nav_links_linkItem ${location[1] === '' ? `link_active` : ''}`}>Home</Link>
+          <Link to={'/search'} className={`nav_links_linkItem ${location[1] === 'search' ? `link_active` : ''}`}>Search</Link>
+          <Link to={'/result/top-headlines/category=general'} className={`nav_links_linkItem ${location[1] === 'result' ? `link_active` : ''}`}>Headlines</Link>
+          <Link to={'/articles'} className={`nav_links_linkItem ${location[1] === 'articles' ? `link_active` : ''}`}>Articles</Link>
         </ul>
       </div>
     </div>
