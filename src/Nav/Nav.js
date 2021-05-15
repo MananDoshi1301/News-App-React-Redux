@@ -17,12 +17,21 @@ const Nav = () => {
     window.addEventListener("scroll", transitionNavBar);
     return () => window.removeEventListener("scroll", transitionNavBar);
   }, []);
+
+
+  let location = (window.location.pathname.split("/"));
   return (
     <div className={`nav ${isScrolled ? "nav_dark nav_brandScrolled" : ""}`}>
       <Link to={'/'} className="nav_content">
         <img className={`nav_logo`} src={appLogo} alt="" />
         <div className={`nav_brand`}>News Express</div>
       </Link>
+      <div className="nav_links">
+        <ul className="nav_links_list">
+          <Link to={'/'} className={`nav_links_linkItem ${location[1]===''?`link_active`:''}`}>Home</Link>
+          <Link to={'/search'} className={`nav_links_linkItem ${location[1]==='search'?`link_active`:''}`}>Search</Link>
+        </ul>
+      </div>
     </div>
   );
 };
