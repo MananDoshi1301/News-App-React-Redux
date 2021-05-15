@@ -38,12 +38,18 @@
 }
 
 .leftResult_listItem{
-    background-color: lightblue;
+    background-color: #C9D8E3;
     margin-bottom: 10px;
     border-radius: 10px;
     padding:2px;
     padding-left: 10px;
-    /* box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    
+    font-weight: 400;
+
+    transition: 0.2s all;
+}
+
+.leftResult_listItem:hover{
+    background-color: #92A1AD;
+    color: white;
 }
