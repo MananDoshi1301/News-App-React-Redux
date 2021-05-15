@@ -36,8 +36,7 @@
 }
 
 .rightResult_listItem{
-    background-color: lightblue;
-    background-color: #C9D8E3;
+    background-color: #D0D7DC;
     margin-bottom: 10px;
     border-radius: 10px;
     padding:2px;
@@ -45,10 +44,11 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     font-weight: 400;
 
-    transition: 0.2s all;
+    transition: background-color 0.2s ease-in;
 }
 
 .rightResult_listItem:hover{
     background-color: #92A1AD;
     color: white;
+    font-weight: 600;
 }
