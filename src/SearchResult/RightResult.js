@@ -24,7 +24,7 @@ const RightResult = () => {
                                 })
                                 .map((category) => {
                                     return (
-                                        <li className={`rightResult_listItem`}><Link to={`/result/${category.type}/${category.link}`}>{category.title}</Link></li>
+                                        <li className={`rightResult_listItem`}><Link to={`/result/${category.type}/${category.link}`} style={{display:'block'}}>{category.title}</Link></li>
                                     )
                                 })}
                         </ul>
