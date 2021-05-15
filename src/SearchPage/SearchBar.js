@@ -1,11 +1,11 @@
 import React from 'react'
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({search, clickSearch}) => {
     return (
         <div className="searchBar">
-            <input className="searchBar_input" type="text"/>
-            <button className="searchBar_button"><i class="fas fa-search"></i></button>
+            <input ref={search} className="searchBar_input" type="text"/>
+            <button className="searchBar_button" onClick={clickSearch}><i class="fas fa-search"></i></button>
         </div>
     )
 }
