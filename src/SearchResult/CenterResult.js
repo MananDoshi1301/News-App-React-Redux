@@ -13,9 +13,8 @@ const CenterResult = ({ fetchUrl, type }) => {
             const request = await axios.get(fetchUrl);
             if (type === 'sources') setNews(request.data.sources);
             else setNews(request.data.articles);
-            console.log(request);
-        }
-        console.log('In useEffect!')
+            console.log(request);            
+        }        
         fetchData();
     }, [fetchUrl]);
 
@@ -24,30 +23,35 @@ const CenterResult = ({ fetchUrl, type }) => {
             <div className="centreResult_header">
                 
             </div>
-            {news && news.map((singNews) => {
-                const time = new Date(singNews.publishedAt);
-                const options = { month: 'long' };
-                const month = new Intl.DateTimeFormat('en-US', options).format(time);
+            {news && news.map((myNews) => {
+                const image = myNews.urlToImage?myNews.urlToImage:"";
+                const title = myNews.title;  //title 
+                const description = myNews.description //description
+                const sourceName = myNews.source.name; //source
+                const author = myNews.author?", "+myNews.author:""; //author
+                //date
+                const time = new Date(myNews.publishedAt);
+                const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(time);
+                const timeline = month+' '+time.getDate()+', '+time.getFullYear()+' '+time.getHours()+':'+time.getMinutes() // timeline
+
                 return <div className="resultCard">
                     <div className="resultCard_img">
-                        <img src={`${singNews.urlToImage?singNews.urlToImage:""}`} alt="" />
+                        <img src={`${image}`} alt="" />
                     </div>
                     <div className="resultCard_content" >
-                        <a href={singNews.url} target="_blank">
+                        <a href={myNews.url} target="_blank">
                             <div className="resultCard_title">
                                 <h1>
-                                    {singNews.title}
+                                    {title}
                                 </h1>
                             </div>
-                            <div className={`resultCard_description`}>
-                                {singNews.description}
-                            </div>
+                            <div className={`resultCard_description`} dangerouslySetInnerHTML={{ __html: myNews.description}}></div>
                             <div className="resultCard_sourceRow">
                                 <small className="resultCard_source">
-                                    {singNews.source.name}
+                                    {sourceName}{author}
                                 </small>
-                                <small>
-                                    {month + ' ' + time.getDate() + ', ' + time.getFullYear()}
+                                <small className="resultCard_source">
+                                    {timeline}
                                 </small>
                             </div>
                         </a>
