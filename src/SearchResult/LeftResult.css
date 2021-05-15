@@ -1,28 +1,44 @@
-.leftResult{
+.leftResult{    
     position: sticky;
     top: 110px;
     width: 25%;
     float: left;
-    margin-right: 3%;   
-    
-    display: flex;
-    justify-content: flex-end;
+    /* margin-right: 3%;    */
     font-family: "Poppins", sans-serif;
+}
+
+.leftResult_header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .leftCont{
     width: 60%;
     padding: 20px;
-    background-color: pink;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
     border-radius: 20px;
-    /* margin: 10px; */
 }
 
 .leftResult_title{
     font-size: 1.4rem;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
 }
 
 .leftResult_list{
     margin-top: 10px;
     font-size: 1.2rem;
+}
+
+.leftResult_listItem{
+    background-color: lightblue;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding:5px;
+    padding-left: 10px;
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
 }
