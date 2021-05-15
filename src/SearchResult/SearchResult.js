@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import LeftResult from './LeftResult';
+import RightResult from './RightResult';
 import CenterResult from './CenterResult';
 import './SearchResult.css';
 import API_KEY from '../API_KEY';
@@ -23,6 +24,7 @@ const SearchResult = () => {
             <section className={`searchResult`} style={{ width: '95%' }}>
                 <LeftResult />
                 <CenterResult fetchUrl={getLink()} type={type} />
+                <RightResult />
             </section>
         </div>
     )
