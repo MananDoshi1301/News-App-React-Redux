@@ -4,6 +4,7 @@ import "./App.css";
 import HomeScreen from "./HomeScreen";
 import SearchPage from "./SearchPage/SearchPage";
 import SearchResult from "./SearchResult/SearchResult";
+import Articles from "./Articles/Articles";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/result/:type/:link">
             <SearchResult />
+          </Route>
+          <Route exact path="/articles">
+            <Articles />
           </Route>
         </Switch>
       </div>
