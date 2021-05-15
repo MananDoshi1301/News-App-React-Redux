@@ -12,7 +12,7 @@
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
     transition: all 0.3s ease-in;
     font-family: "Poppins", sans-serif;
-    background: rgba(171, 205, 207, 0.3);
+    /* background: rgba(171, 205, 207, 0.3); */
 }
 
 .resultCard_img > img{
