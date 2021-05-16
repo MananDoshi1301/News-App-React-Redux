@@ -9,10 +9,10 @@ const HomeScreen = () => {
         <>
             <Nav />
             <Banner />
-            <TopNewsRow
+            {/* <TopNewsRow
                 title={'Top Headlines: India'}
                 fetchUrl={requests.fetchTopHeadlinesIndia}
-            />
+            /> */}
             {/* <TopNewsRow
                 title={'Top Headlines: United States'}
                 fetchUrl={requests.fetchTopHeadlinesUS}
