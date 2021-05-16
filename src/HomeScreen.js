@@ -3,6 +3,7 @@ import Banner from './Nav/Banner'
 import Nav from './Nav/Nav'
 import TopNewsRow from './Row/TopNewsRow'
 import requests from "./Requests";
+import VerticalRunner from './VerticalRunner/VerticalRunner';
 
 const HomeScreen = () => {
     return (
@@ -17,6 +18,7 @@ const HomeScreen = () => {
                 title={'Top Headlines: United States'}
                 fetchUrl={requests.fetchTopHeadlinesUS}
             /> */}
+            <VerticalRunner />
         </>
     )
 }
