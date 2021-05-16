@@ -14,11 +14,12 @@ const HomeScreen = () => {
                 title={'Top Headlines: India'}
                 fetchUrl={requests.fetchTopHeadlinesIndia}
             /> */}
+            {/* <VerticalRunner title={'News'}
+            fetchUrl={requests.fetchTopHeadlinesIndia} /> */}
             {/* <TopNewsRow
                 title={'Top Headlines: United States'}
                 fetchUrl={requests.fetchTopHeadlinesUS}
             /> */}
-            <VerticalRunner />
         </>
     )
 }
