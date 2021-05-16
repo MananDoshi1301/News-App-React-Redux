@@ -1,0 +1,17 @@
+.verticalRunners{
+    width: 600px;
+    text-align: center;
+}
+
+.verticalRunner{
+    /* width: 600px; */
+}
+
+.verticalRunner_image{
+    display: flex;
+    justify-content: center;
+}
+.verticalRunner_image>img{
+    width: 400px;
+    height: 400px;
+}
