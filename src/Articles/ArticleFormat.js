@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { nytKey } from "../API_KEY";
 import { nyt } from "../axios";
 import "./ArticleFormat.css";
+import appLogo from "../appLogo.png";
 
-const ArticleFormat = ({ fetchUrl = "viewed/30.json" }) => {
+const ArticleFormat = ({ fetchUrl }) => {
   const [userArticles, setUserArticles] = useState([]);
   useEffect(() => {
     async function fetchData() {
@@ -15,55 +17,63 @@ const ArticleFormat = ({ fetchUrl = "viewed/30.json" }) => {
       }
     }
     fetchData();
-  }, []);
+  }, [fetchUrl]);
 
-  userArticles && console.log(userArticles[0]);
+  // userArticles && console.log(obj);
 
   return (
     <>
-      {userArticles && (
-        <div className="articles">
-          <div className="article">
-            <div className="article_content">
-              <div className="article_title">
-                <h1>{userArticles[0]["title"]}</h1>
-              </div>
-              <div className="article_abstract">
-                {userArticles[0]["abstract"]}
-              </div>
-            </div>
-            <div className="article_image">
-              <img
-                src={userArticles[0]["media"][0]["media-metadata"][2]["url"]}
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
+      {console.log(userArticles)}
 
-          <div className="article">
-            <div className="article_content">{userArticles[0]["title"]}</div>
-            <div className="article_image">
-              <img
-                src={userArticles[0]["media"][0]["media-metadata"][2]["url"]}
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
+      <div className="articles">
+        {userArticles &&
+          userArticles.map((obj) => {
+            let img;
+            if (obj.media.length !== 0) {
+              img = [...obj.media];
+              if (img[0]["media-metadata"].length != 0) {
+                img = img[0]["media-metadata"];
+                try {
+                  img = img[2].url;
+                } catch (err) {
+                  try {
+                    img = img[1].url;
+                  } catch (err) {
+                    img = img[0].url;
+                  }
+                }
+              } else {
+                img = appLogo;
+              }
+            } else {
+              img = appLogo;
+            }
 
-          <div className="article">
-            <div className="article_content">{userArticles[0]["title"]}</div>
-            <div className="article_image">
-              <img
-                src={userArticles[0]["media"][0]["media-metadata"][2]["url"]}
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
-        </div>
-      )}
+            const ref = obj["adx_keywords"].split(";");
+
+            return (
+              <a href={obj["url"]} className="article" target="_blank">
+                <div className="article_content">
+                  <div className="article_title">
+                    <h1>{obj["title"]}</h1>
+                  </div>
+                  <div className="article_section">
+                    {obj["section"]}
+                    {obj["subsection"] !== "" ? ", " + obj["subsection"] : ""}
+                  </div>
+                  <div className="article_abstract">{obj["abstract"]}</div>
+                  <div className="article_byline">-{obj["byline"]}</div>
+                  <div className="article_reference">
+                    <span className="article_reference_title"></span>
+                  </div>
+                </div>
+                <div className="article_image">
+                  {obj["media"] && <img src={img} alt="" srcset="" />}
+                </div>
+              </a>
+            );
+          })}
+      </div>
     </>
   );
 };
