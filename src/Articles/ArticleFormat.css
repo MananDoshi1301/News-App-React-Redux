@@ -74,9 +74,6 @@
   transition: all 0.3s ease-in;
 }
 
-.article_byline_timeline{
-}
-
 .article:hover .article_byline{
   color: #2884c9;
 }
