@@ -49,7 +49,22 @@ const ArticleFormat = ({ fetchUrl }) => {
               img = appLogo;
             }
 
-            const ref = obj["adx_keywords"].split(";");
+            const ref = obj["adx_keywords"].split(";").join(", ");
+
+            const time = new Date(obj.updated);
+          const month = new Intl.DateTimeFormat("en-US", {
+            month: "long",
+          }).format(time);
+          const timeline =
+            month +
+            " " +
+            time.getDate() +
+            ", " +
+            time.getFullYear() +
+            " " +
+            time.getHours() +
+            ":" +
+            time.getMinutes(); // timeline
 
             return (
               <a href={obj["url"]} className="article" target="_blank">
@@ -62,10 +77,14 @@ const ArticleFormat = ({ fetchUrl }) => {
                     {obj["subsection"] !== "" ? ", " + obj["subsection"] : ""}
                   </div>
                   <div className="article_abstract">{obj["abstract"]}</div>
-                  <div className="article_byline">-{obj["byline"]}</div>
                   <div className="article_reference">
-                    <span className="article_reference_title"></span>
+                    <span className="article_reference_title">Reference: </span>
+                    {ref}
                   </div>
+                  <div className="article_byline">
+                    <span className={'article_byline_article'}>-{obj["byline"]}</span>
+                    <span className='article_byline_timeline'>{timeline}</span>
+                  </div>                  
                 </div>
                 <div className="article_image">
                   {obj["media"] && <img src={img} alt="" srcset="" />}
