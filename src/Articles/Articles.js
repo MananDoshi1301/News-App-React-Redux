@@ -23,7 +23,7 @@ const Articles = ({ fetchUrl = 'viewed/30.json' }) => {
     <>
       <Nav />
       <div>
-        <ArticleFormat />
+        <ArticleFormat fetchUrl={'/viewed/7.json'} />
       </div>
     </>
   )
