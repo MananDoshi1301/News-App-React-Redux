@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react'
 import axios from "../axios";
 import Slider from 'react-slick';
 import './VerticalRunner.css';
+import appLogo from '../appLogo.png'
 
-import { dummyData } from '../data';
+// import { dummyData } from '../data';
 
-const VerticalRunner = ({ fetchUrl, width = '600px', title }) => {
+const VerticalRunner = ({ fetchUrl, width = '600px', title='News' }) => {
 
-  let [topNews, setTopNews] = useState(dummyData.articles);
+  let [topNews, setTopNews] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      // const request = await axios.get(fetchUrl);
-      // setTopNews(request.data.articles);
-      // return request;
+      const request = await axios.get(fetchUrl);
+      setTopNews(request.data.articles);
+      return request;
     }
 
     fetchData();
@@ -38,34 +39,43 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title }) => {
     return string.length > n ? string.substr(0, n - 1) + "..." : string;
   };
 
-
+  console.log(topNews);
   return (
+    <>
     <div className='verticalRunners' style={{ width: width }}>
-      <h1>{title}</h1>
+      <h1>Top {title}</h1>
       <Slider {...settings}>
         {topNews.map((obj) => {
+          let image;
+          if(!obj.urlToImage){
+            image = appLogo;
+          }else{ image = obj.urlToImage }
           return (
 
-            <div className="verticalRunner">
+            <a href={obj.url} target="_blank" className="verticalRunner">
               <div className="verticalRunner_image">
-                <img src={obj.urlToImage} alt="" />
+                <img src={image} alt="" />
               </div>
               <div className="verticalRunner_content">
                 <div className="verticalRunner_title">
-                  <h2>{obj.title}</h2>
+                  <h2>{truncate(obj.title, 80)}</h2>
                 </div>
                 <div className="verticalRunner_description">
-                  {truncate(obj.description, 200)}
+                  {obj.description?truncate(obj.description, 180):""}
                 </div>
                 <div className="verticalRunner_sourceName">
                   - {obj.source.name} -
                 </div>
+                <div className="arrow">
+                  <i class="fas fa-arrow-circle-right"></i>
+                </div>                
               </div>
-            </div>
+            </a>
           )
         })}
       </Slider>
     </div>
+    </>
   )
 }
 
