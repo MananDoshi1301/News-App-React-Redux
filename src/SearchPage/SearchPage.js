@@ -10,17 +10,17 @@ const SearchPage = () => {
   const search = useRef(null);
   const history = useHistory();
   const searchQuery = () => {
-    if(search.current.value !== ''){
+    if (search.current.value !== '') {
       history.push(`/result/everything/q=${search.current.value}`);
     }
   }
   return (
     <div>
       <Nav />
-      <div style={{position:'absolute', top:'120px', marginLeft:'30px', width:'1475px'}}>
-        <SearchBar search={search} clickSearch={searchQuery}/>
-        <div style={{marginBottom:'40px'}}>
-          <SearchTiles category={catDetails}/>
+      <div style={{ position: 'absolute', top: '120px', marginLeft: '30px', width: '1450px' }}>
+        <SearchBar search={search} clickSearch={searchQuery} />
+        <div style={{ marginBottom: '40px' }}>
+          <SearchTiles category={catDetails} />
         </div>
       </div>
     </div>
