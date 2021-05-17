@@ -20,7 +20,7 @@ const HomeScreen = () => {
         title={"Top Headlines: India"}
         fetchUrl={requests.fetchTopHeadlinesIndia}
       /> */}
-      <div style={{display:"flex", justifyContent:'space-around', marginTop:'60px'}}>
+      <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}>
         {/* <VerticalRunner
           title={"News"}
           fetchUrl={customHeadlines[0]}
@@ -28,16 +28,16 @@ const HomeScreen = () => {
         />
         <SideButtons headline={customHeadlines} setHeadline={setCustomHeadlines} /> */}
       </div>
-      <div style={{marginTop:'60px'}}>
+      <div style={{ marginTop: '60px' }}>
         {/* <TopNewsRow
           title={'Top Headlines: United States'}
           fetchUrl={requests.fetchTopHeadlinesUS}
         /> */}
       </div>
-      <div style={{display:"flex", justifyContent:'space-around', marginTop:'60px'}}
+      <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}
       >
-        <ArticleSideButtons article={articleHeadline} setArticle={setArticleHeadline}/>
-        <ArticleRunner fetchUrl={articleHeadline[0]} title={articleHeadline[1]}/>
+        <ArticleSideButtons article={articleHeadline} setArticle={setArticleHeadline} />
+        <ArticleRunner fetchUrl={articleHeadline[0]} title={articleHeadline[1]} />
       </div>
       <ScrollBackBtn />
     </>
