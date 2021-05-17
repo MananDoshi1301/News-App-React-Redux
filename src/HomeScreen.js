@@ -5,9 +5,10 @@ import TopNewsRow from "./Row/TopNewsRow";
 import requests from "./Requests";
 import VerticalRunner from "./VerticalRunner/VerticalRunner";
 import ScrollBackBtn from "./ScrollBackBtn";
+import SideButtons from "./VerticalRunner/SideButtons";
 
 const HomeScreen = () => {
-  const [customHeadliness, setCustomHeadlines] = useState(null);
+  const [customHeadlines, setCustomHeadlines] = useState([requests.fetchTopHeadlinesBusiness, 'Business']);
   return (
     <>
       <Nav />
@@ -16,17 +17,20 @@ const HomeScreen = () => {
         title={"Top Headlines: India"}
         fetchUrl={requests.fetchTopHeadlinesIndia}
       /> */}
-      <div>
-        <VerticalRunner
+      <div style={{display:"flex", justifyContent:'space-around', marginTop:'60px'}}>
+        {/* <VerticalRunner
           title={"News"}
-          fetchUrl={requests.fetchTopHeadlinesIndia}
-          title={"Headlines"}
+          fetchUrl={customHeadlines[0]}
+          title={customHeadlines[1]}
         />
+        <SideButtons headline={customHeadlines} setHeadline={setCustomHeadlines} /> */}
       </div>
-      {/* <TopNewsRow
-                title={'Top Headlines: United States'}
-                fetchUrl={requests.fetchTopHeadlinesUS}
-            /> */}
+      <div style={{marginTop:'60px'}}>
+        {/* <TopNewsRow
+          title={'Top Headlines: United States'}
+          fetchUrl={requests.fetchTopHeadlinesUS}
+        /> */}
+      </div>
 
       <ScrollBackBtn />
     </>
