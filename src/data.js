@@ -24,13 +24,13 @@ export default catDetails;
 
 
 const topDetails = [
-  { title="Business", genre="category", value="business" },
-  { title="Entertainment", genre="category", value="entertainment" },
-  { title="General", genre="category", value="general" },
-  { title="Health", genre="category", value="health" },
-  { title="Science", genre="category", value="science" },
-  { title="Sports", genre="category", value="sports" },
-  { title="Technology", genre="category", value="technology" },
+  { title:"Business", genre:"category", value:"business" },
+  { title:"Entertainment", genre:"category", value:"entertainment" },
+  { title:"General", genre:"category", value:"general" },
+  { title:"Health", genre:"category", value:"health" },
+  { title:"Science", genre:"category", value:"science" },
+  { title:"Sports", genre:"category", value:"sports" },
+  { title:"Technology", genre:"category", value:"technology" },
 ]
 
 export {topDetails};
