@@ -28,7 +28,7 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
 
       <div className="articles">
         <div className="centreResult_header">
-          <span>Most ' {art.toUpperCase()} '</span>
+          <span>Most {art.toUpperCase()}</span>
           <span>TOTAL RESULTS: {userArticles.length}</span>
         </div>
         {userArticles &&
