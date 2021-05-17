@@ -4,10 +4,22 @@ import "./CenterResult.css";
 import appLogo from "../appLogo.png";
 import { motion } from "framer-motion";
 
-const CenterResult = ({ fetchUrl, type }) => {
-  // const [open, setOpen] = useState(false);
-  const [news, setNews] = useState([]);
+// import { dummyData } from "../data";
+import { useParams } from "react-router-dom";
 
+const CenterResult = ({ fetchUrl, type }) => {
+  const [news, setNews] = useState([]);
+  const { link } = useParams();
+
+  let cat = link.split("=");
+  if (type === "top-headlines") {
+    // ["sources", "cnn&pageSize", "40"]
+    cat = cat[1].split("&");
+    cat = cat[0].toUpperCase();
+  } else {
+    // [category,general]
+    cat = cat[1][0].toUpperCase() + cat[1].slice(1);
+  }
   useEffect(() => {
     async function fetchData() {
       try {
@@ -24,10 +36,15 @@ const CenterResult = ({ fetchUrl, type }) => {
 
   return (
     <div className={`centerResult`}>
-      <div className="centreResult_header"></div>
+      <div className="centreResult_header">
+        <span>
+          {type.toUpperCase()}, {cat}
+        </span>
+        <span>TOTAL RESULTS: {news.length}</span>
+      </div>
       {news &&
         news.map((myNews) => {
-          const image = myNews.urlToImage ? myNews.urlToImage : "";
+          const image = myNews.urlToImage ? myNews.urlToImage : appLogo;
           const title = myNews.title; //title
           const description = myNews.description; //description
           const sourceName = myNews.source.name; //source
