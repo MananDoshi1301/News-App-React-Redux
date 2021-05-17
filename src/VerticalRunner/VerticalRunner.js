@@ -19,14 +19,29 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
     fetchData();
   }, [fetchUrl]);
 
+  const Arrow = props => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ background: "#006db6", borderRadius: '100%', padding: '5px' }}
+        onClick={onClick}
+      />
+    );
+  }
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
     adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
     beforeChange: function (currentSlide, nextSlide) {
       console.log("before change", currentSlide, nextSlide);
     },
