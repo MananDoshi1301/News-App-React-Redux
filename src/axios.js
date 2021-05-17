@@ -8,6 +8,9 @@ const nyt = {
     mostPopular: axios.create({
         baseURL: "https://api.nytimes.com/svc/mostpopular/v2/"
     }),
+    topstories: axios.create({
+        baseURL: "https://api.nytimes.com/svc/topstories/v2/"
+    }),
 }
 export default instance;
 export { nyt };
