@@ -29,7 +29,7 @@
   color: #345065;
   font-weight: 900;
 
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .article:hover .article_title {
@@ -48,33 +48,33 @@
   color: #345065;
   color: #233645;
   font-weight: 600;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .article:hover .article_abstract {
   color: #2884c9;
 }
 
-.article_reference{
+.article_reference {
   margin-top: 10px;
   font-size: 1.1rem;
 }
 
-.article_reference_title{
+.article_reference_title {
   font-size: 1.2rem;
 }
 
-.article_byline{
+.article_byline {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   font-size: 1.1rem;
   font-weight: 600;
 
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-.article:hover .article_byline{
+.article:hover .article_byline {
   color: #2884c9;
 }
 

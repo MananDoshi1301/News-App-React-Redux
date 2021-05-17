@@ -4,13 +4,13 @@ import ScrollBackBtn from '../ScrollBackBtn';
 import Nav from '../Nav/Nav';
 import ArticleFormat from './ArticleFormat';
 
-const Articles = ({ fetchUrl = 'viewed/30.json' }) => {
-  
+const Articles = () => {
+  const [article, setArticle] = useState('/viewed/7.json')
   return (
     <>
       <Nav />
       <div>
-        <ArticleFormat fetchUrl={'/viewed/7.json'} />
+        <ArticleFormat fetchUrl={article} setArticle={setArticle} />
         <ScrollBackBtn />
       </div>
     </>

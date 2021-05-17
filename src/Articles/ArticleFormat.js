@@ -5,7 +5,7 @@ import { nyt } from "../axios";
 import "./ArticleFormat.css";
 import appLogo from "../appLogo.png";
 
-const ArticleFormat = ({ fetchUrl }) => {
+const ArticleFormat = ({ fetchUrl, setArticle }) => {
   const [userArticles, setUserArticles] = useState([]);
   useEffect(() => {
     async function fetchData() {
@@ -19,13 +19,18 @@ const ArticleFormat = ({ fetchUrl }) => {
     fetchData();
   }, [fetchUrl]);
 
-  // userArticles && console.log(obj);
+  let art = fetchUrl.split("/")[1];
+  console.log(art);
 
   return (
     <>
       {console.log(userArticles)}
 
       <div className="articles">
+        <div className="centreResult_header">
+          <span>Most ' {art.toUpperCase()} '</span>
+          <span>TOTAL RESULTS: {userArticles.length}</span>
+        </div>
         {userArticles &&
           userArticles.map((obj) => {
             let img;
@@ -52,19 +57,19 @@ const ArticleFormat = ({ fetchUrl }) => {
             const ref = obj["adx_keywords"].split(";").join(", ");
 
             const time = new Date(obj.updated);
-          const month = new Intl.DateTimeFormat("en-US", {
-            month: "long",
-          }).format(time);
-          const timeline =
-            month +
-            " " +
-            time.getDate() +
-            ", " +
-            time.getFullYear() +
-            " " +
-            time.getHours() +
-            ":" +
-            time.getMinutes(); // timeline
+            const month = new Intl.DateTimeFormat("en-US", {
+              month: "long",
+            }).format(time);
+            const timeline =
+              month +
+              " " +
+              time.getDate() +
+              ", " +
+              time.getFullYear() +
+              " " +
+              time.getHours() +
+              ":" +
+              time.getMinutes(); // timeline
 
             return (
               <a href={obj["url"]} className="article" target="_blank">
@@ -82,9 +87,11 @@ const ArticleFormat = ({ fetchUrl }) => {
                     {ref}
                   </div>
                   <div className="article_byline">
-                    <span className={'article_byline_article'}>-{obj["byline"]}</span>
-                    <span className='article_byline_timeline'>{timeline}</span>
-                  </div>                  
+                    <span className={"article_byline_article"}>
+                      -{obj["byline"]}
+                    </span>
+                    <span className="article_byline_timeline">{timeline}</span>
+                  </div>
                 </div>
                 <div className="article_image">
                   {obj["media"] && <img src={img} alt="" srcset="" />}
