@@ -6,9 +6,12 @@ import requests from "./Requests";
 import VerticalRunner from "./VerticalRunner/VerticalRunner";
 import ScrollBackBtn from "./ScrollBackBtn";
 import SideButtons from "./VerticalRunner/SideButtons";
+import ArticleRunner from "./VerticalRunner/ArticleRunner";
+import ArticleSideButtons from "./VerticalRunner/ArticleSideButtons";
 
 const HomeScreen = () => {
   const [customHeadlines, setCustomHeadlines] = useState([requests.fetchTopHeadlinesBusiness, 'Business']);
+  const [articleHeadline, setArticleHeadline] = useState(['world', 'World']);
   return (
     <>
       <Nav />
@@ -31,7 +34,11 @@ const HomeScreen = () => {
           fetchUrl={requests.fetchTopHeadlinesUS}
         /> */}
       </div>
-
+      <div style={{display:"flex", justifyContent:'space-around', marginTop:'60px'}}
+      >
+        <ArticleSideButtons article={articleHeadline} setArticle={setArticleHeadline}/>
+        <ArticleRunner fetchUrl={articleHeadline[0]} title={articleHeadline[1]}/>
+      </div>
       <ScrollBackBtn />
     </>
   );
