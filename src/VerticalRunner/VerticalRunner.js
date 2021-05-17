@@ -6,7 +6,7 @@ import appLogo from '../appLogo.png'
 
 // import { dummyData } from '../data';
 
-const VerticalRunner = ({ fetchUrl, width = '600px', title='News' }) => {
+const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
 
   let [topNews, setTopNews] = useState([]);
   useEffect(() => {
@@ -42,39 +42,39 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title='News' }) => {
   console.log(topNews);
   return (
     <>
-    <div className='verticalRunners' style={{ width: width }}>
-      <h1>Top {title}</h1>
-      <Slider {...settings}>
-        {topNews.map((obj) => {
-          let image;
-          if(!obj.urlToImage){
-            image = appLogo;
-          }else{ image = obj.urlToImage }
-          return (
+      <div className='verticalRunners' style={{ width: width }}>
+        <h1>Top {title}</h1>
+        <Slider {...settings}>
+          {topNews.map((obj) => {
+            let image;
+            if (!obj.urlToImage) {
+              image = appLogo;
+            } else { image = obj.urlToImage }
+            return (
 
-            <a href={obj.url} target="_blank" className="verticalRunner">
-              <div className="verticalRunner_image">
-                <img src={image} alt="" />
-              </div>
-              <div className="verticalRunner_content">
-                <div className="verticalRunner_title">
-                  <h2>{truncate(obj.title, 80)}</h2>
+              <a href={obj.url} target="_blank" className="verticalRunner">
+                <div className="verticalRunner_image">
+                  <img src={image} alt="" />
                 </div>
-                <div className="verticalRunner_description">
-                  {obj.description?truncate(obj.description, 180):""}
+                <div className="verticalRunner_content">
+                  <div className="verticalRunner_title">
+                    <h2>{truncate(obj.title, 80)}</h2>
+                  </div>
+                  <div className="verticalRunner_description">
+                    {obj.description ? truncate(obj.description, 180) : ""}
+                  </div>
+                  <div className="verticalRunner_sourceName">
+                    - {obj.source.name}
+                    <span className="arrow">
+                      <i class="fas fa-arrow-circle-right"></i>
+                    </span>
+                  </div>
                 </div>
-                <div className="verticalRunner_sourceName">
-                  - {obj.source.name} -
-                </div>
-                <div className="arrow">
-                  <i class="fas fa-arrow-circle-right"></i>
-                </div>                
-              </div>
-            </a>
-          )
-        })}
-      </Slider>
-    </div>
+              </a>
+            )
+          })}
+        </Slider>
+      </div>
     </>
   )
 }
