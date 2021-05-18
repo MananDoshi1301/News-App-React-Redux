@@ -7,7 +7,7 @@ const SideButtons = ({ headline, setHeadline }) => {
     return (
         <div className='sideButtons'>
             <span>
-                <div className="sideButtons_title">- {'Go For Top Headlines'.toUpperCase()} -</div>
+                <div className="sideButtons_title">{'Go For Top Headlines'.toUpperCase()}</div>
                 <div className="sideButtons_panel">
                     {topDetails.map((obj) => {
                         return (

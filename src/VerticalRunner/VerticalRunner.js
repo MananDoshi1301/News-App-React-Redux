@@ -58,7 +58,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
   return (
     <>
       <div className='verticalRunners' style={{ width: width }}>
-        <h1>TOP {title.toUpperCase()}</h1>
+        <h1 className="runner_title">{title.toUpperCase()}</h1>
         <Slider {...settings}>
           {topNews.map((obj) => {
             let image;
