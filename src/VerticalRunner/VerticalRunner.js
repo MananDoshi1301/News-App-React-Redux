@@ -58,7 +58,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
   return (
     <>
       <div className='verticalRunners' style={{ width: width }}>
-        <h1>Top {title}</h1>
+        <h1>TOP {title.toUpperCase()}</h1>
         <Slider {...settings}>
           {topNews.map((obj) => {
             let image;
@@ -79,7 +79,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
                     {obj.description ? truncate(obj.description, 180) : ""}
                   </div>
                   <div className="verticalRunner_sourceName">
-                    - {obj.source.name}
+                    {/* - {obj.source.name} */}
                     <span className="arrow">
                       <i class="fas fa-arrow-circle-right"></i>
                     </span>
