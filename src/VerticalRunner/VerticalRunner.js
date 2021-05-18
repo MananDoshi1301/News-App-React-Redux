@@ -24,7 +24,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
     return (
       <div
         className={className}
-        style={{ background: "#006db6", borderRadius: '100%', padding: '5px' }}
+        style={{ background: "#006db6", borderRadius: '100%', padding: '7px'}}
         onClick={onClick}
       />
     );
