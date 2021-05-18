@@ -12,7 +12,7 @@ const SideButtons = ({ headline, setHeadline }) => {
                     {topDetails.map((obj) => {
                         return (
                             <div className={`sideButttons_btn 
-                        ${obj.title === headline[1] ? 'btnActive' : ''}
+                        ${obj.title === headline[1] ? 'btnActive' : 'notActiveBtn'}
                         `} onClick={() => {
                                     setHeadline([`top-headlines?${obj.genre}=${obj.value}&apiKey=${API_KEY}`, obj.title])
                                 }}><span className={'btn'}>{obj.title}</span></div>

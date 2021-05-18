@@ -33,6 +33,15 @@
   padding: 10px;
   cursor: pointer;
   background-color: #bdd5ea;
+  transition: all 0.3s ease-in;
+}
+
+.notActiveBtn{
+  border: 1px solid white;
+}
+
+.notActiveBtn:hover{
+  background-color: white;
 }
 
 .btn {

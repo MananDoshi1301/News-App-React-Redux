@@ -12,7 +12,7 @@ const ArticleSideButtons = ({ article, setArticle }) => {
                     {articleDetails.map((obj) => {
                         return (
                             <div className={`sideButttons_btn 
-                        ${obj[0].toUpperCase() + obj.slice(1) === article[1] ? 'btnActive' : ''}
+                        ${obj[0].toUpperCase() + obj.slice(1) === article[1] ? 'btnActive' : 'notActiveBtn'}
                         `}
                                 onClick={() => {
                                     console.log(obj, obj[0].toUpperCase() + obj.slice(1))
