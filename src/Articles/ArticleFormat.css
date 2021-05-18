@@ -9,6 +9,27 @@
   font-family: Poppins;
 }
 
+.articleDetails{
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleDetails_optionList{
+  display: flex;
+  margin: 0 10px;
+}
+
+.articleDetails_listItem{
+  margin: 0 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activeArt{ 
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
 .article {
   /* position: sticky;
   top: 100px; */

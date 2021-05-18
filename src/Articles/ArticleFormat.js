@@ -17,10 +17,13 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
       }
     }
     fetchData();
+    window.scrollTo(0,0);
   }, [fetchUrl]);
 
   let art = fetchUrl.split("/")[1];
   console.log(art);
+
+  const artOPtions = ['Emailed', 'Shared', 'Viewed']
 
   return (
     <>
@@ -28,7 +31,18 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
 
       <div className="articles">
         <div className="centreResult_header">
-          <span>Most {art.toUpperCase()}</span>
+          <span className='articleDetails'>Most :
+            {/* {art.toUpperCase()} */}
+            <ul className='articleDetails_optionList'>
+              {artOPtions.map((obj)=>{
+                return (
+                  <li onClick={()=>{
+                    setArticle(`/${obj.toLowerCase()}/7.json`)
+                  }} className={`articleDetails_listItem ${obj.toLowerCase() === art.toLowerCase()?'activeArt':''}`}>{obj}</li>
+                )
+              })}              
+            </ul>
+          </span>
           <span>TOTAL RESULTS: {userArticles.length}</span>
         </div>
         {userArticles &&
