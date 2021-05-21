@@ -14,6 +14,7 @@ const SearchPage = () => {
       history.push(`/result/everything/q=${search.current.value}`);
     }
   }
+  window.scrollTo(0,0);
   return (
     <div>
       <Nav />
