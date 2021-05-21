@@ -8,6 +8,7 @@ import ScrollBackBtn from "./ScrollBackBtn";
 import SideButtons from "./VerticalRunner/SideButtons";
 import ArticleRunner from "./VerticalRunner/ArticleRunner";
 import ArticleSideButtons from "./VerticalRunner/ArticleSideButtons";
+import Footer from "./Footer/Footer";
 
 const HomeScreen = () => {
   const [customHeadlines, setCustomHeadlines] = useState([requests.fetchTopHeadlinesBusiness, 'Business']);
@@ -40,6 +41,7 @@ const HomeScreen = () => {
         <ArticleRunner fetchUrl={articleHeadline[0]} title={articleHeadline[1]} />
       </div>
       <ScrollBackBtn />
+      <Footer />
     </>
   );
 };
