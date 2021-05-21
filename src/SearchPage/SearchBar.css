@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     gap: 1%;
+    font-family: 'Poppins';
+
 }
 
 .searchBar_input{
@@ -16,6 +18,11 @@
     transition: all 0.4s;
 }
 
+.searchBar_input::placeholder{
+    font-family: 'Poppins';
+    color: #bdd5ea;
+}
+
 input:focus{
     outline: none;
     border: 6px #4596cc solid;
@@ -23,6 +30,7 @@ input:focus{
 
 .searchBar_button{
     width: 10%;
+    cursor: pointer;
     border: 5px solid #4596cc;
     background-color: white;
     border-radius: 10px;
