@@ -4,11 +4,13 @@ import "./RightResult.css";
 import catDetails from "../data";
 
 const RightResult = () => {
-    let genres = catDetails.map((obj)=>{
-        return obj.category;
-    })
-    genres = [...new Set(genres)];
-    genres = genres.slice(genres.length%2+1);
+    // let genres = catDetails
+    // .map((obj)=>{
+    //     return obj.category;
+    // })    
+    // genres = [...new Set(genres)];
+    // genres = genres.slice(genres.length%2+1);
+    let genres = ['giants'];
 
     const items = () => {
         let arr = [];
