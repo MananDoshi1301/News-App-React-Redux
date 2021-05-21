@@ -23,9 +23,9 @@ const CenterResult = ({ fetchUrl, type }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        // const request = await axios.get(fetchUrl);
-        // if (type === "sources") setNews(request.data.sources);
-        // else setNews(request.data.articles);
+        const request = await axios.get(fetchUrl);
+        if (type === "sources") setNews(request.data.sources);
+        else setNews(request.data.articles);
         // console.log(request);
       } catch (error) {
         console.log(error.message);
