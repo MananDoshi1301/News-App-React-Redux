@@ -1,0 +1,27 @@
+.footer{
+    position: relative;
+    font-family: 'Poppins';
+}
+
+.footer_container{
+    position: absolute;
+    top: 15%;
+    margin:0 20px;
+}
+
+.footer_container_title{
+    font-size: 4.4em;
+    font-weight: bold;
+    color: white;
+}
+
+.footer_container_title_diffCol{
+    color: #067dcc;
+}
+
+.footer_wavesvg{
+    position: relative;
+    bottom: 0;
+
+    z-index: -1;
+}
