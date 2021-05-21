@@ -17,23 +17,23 @@ const HomeScreen = () => {
     <>
       <Nav />
       <Banner />
-      {/* <TopNewsRow
+      <TopNewsRow
         title={"Top Headlines: India"}
         fetchUrl={requests.fetchTopHeadlinesIndia}
-      /> */}
+      />
       <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}>
-        {/* <VerticalRunner
+        <VerticalRunner
           title={"News"}
           fetchUrl={customHeadlines[0]}
           title={customHeadlines[1]}
         />
-        <SideButtons headline={customHeadlines} setHeadline={setCustomHeadlines} /> */}
+        <SideButtons headline={customHeadlines} setHeadline={setCustomHeadlines} />
       </div>
       <div style={{ marginTop: '60px' }}>
-        {/* <TopNewsRow
+        <TopNewsRow
           title={'Top Headlines: United States'}
           fetchUrl={requests.fetchTopHeadlinesUS}
-        /> */}
+        />
       </div>
       <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}
       >
