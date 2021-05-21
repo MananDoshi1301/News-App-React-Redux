@@ -15,6 +15,7 @@
   margin-bottom: 20px;
   margin-top: 10px;
   padding: 10px 20px 10px 20px;
+  z-index: 1;
 
   font-size: 1.3rem;
   font-weight: 600;
@@ -29,8 +30,17 @@
   /* width: 100%; */
   margin-bottom: 40px;
   padding: 15px;
+
   border-radius: 40px;
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  /* box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5); */
+
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 150, 170, 180, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  /* border-radius: 10px; */
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
   transition: all 0.3s ease-in;
   font-family: "Poppins", sans-serif;
   /* background: rgba(171, 205, 207, 0.3); */
