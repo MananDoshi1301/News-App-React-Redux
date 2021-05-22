@@ -41,7 +41,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
                     <div className="topNewsRow_authorDetails_source">
                       {news.source.name ? "- " + news.source.name : ""}
                     </div>
-                    <i class="fas fa-arrow-circle-right topNewsRow_storyLink"></i>
+                    <i className="fas fa-arrow-circle-right topNewsRow_storyLink"></i>
                   </div>
                 </div>
               </a>

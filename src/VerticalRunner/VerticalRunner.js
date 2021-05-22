@@ -81,7 +81,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
                   <div className="verticalRunner_sourceName">
                     {/* - {obj.source.name} */}
                     <span className="arrow">
-                      <i class="fas fa-arrow-circle-right"></i>
+                      <i className="fas fa-arrow-circle-right"></i>
                     </span>
                   </div>
                 </div>

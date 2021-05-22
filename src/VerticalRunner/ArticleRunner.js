@@ -83,7 +83,7 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
                   <div className="verticalRunner_sourceName">
                     {/* - {obj.byline} */}
                     <span className="arrow">
-                      <i class="fas fa-arrow-circle-right"></i>
+                      <i className="fas fa-arrow-circle-right"></i>
                     </span>
                   </div>
                 </div>

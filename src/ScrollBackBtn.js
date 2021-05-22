@@ -16,7 +16,7 @@ const ScrollBackBtn = () => {
         <div onClick={() => { window.scrollTo(0, 0) }}
         className={`${!scroll?'hideScroll':''}`}
         >
-            <i class="fas fa-chevron-up scrollBackBtn"></i>
+            <i className="fas fa-chevron-up scrollBackBtn"></i>
         </div>
         </>
     )
