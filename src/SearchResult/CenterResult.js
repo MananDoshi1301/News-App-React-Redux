@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import "./CenterResult.css";
 import appLogo from "../appLogo.png";
-import { motion } from "framer-motion";
 
 // import { dummyData } from "../data";
 import { useParams } from "react-router-dom";
@@ -32,7 +31,7 @@ const CenterResult = ({ fetchUrl, type }) => {
       }
     }
     fetchData();
-  }, [fetchUrl]);
+  });
 
   return (
     <div className={`centerResult`}>
@@ -46,7 +45,7 @@ const CenterResult = ({ fetchUrl, type }) => {
         news.map((myNews, key) => {
           const image = myNews.urlToImage ? myNews.urlToImage : appLogo;
           const title = myNews.title; //title
-          const description = myNews.description; //description
+          // const description = myNews.description; //description
           const sourceName = myNews.source.name; //source
           const author = myNews.author ? ", " + myNews.author : ""; //author
           //date
@@ -71,7 +70,7 @@ const CenterResult = ({ fetchUrl, type }) => {
                 <img src={`${image}`} alt="" />
               </div>
               <div className="resultCard_content">
-                <a href={myNews.url} target="_blank">
+                <a href={myNews.url} target="_blank" rel="noreferrer">
                   <div className="resultCard_title">
                     <h1>{title}</h1>
                   </div>

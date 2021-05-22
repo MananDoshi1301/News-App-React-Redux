@@ -20,7 +20,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
   }, [fetchUrl]);
 
   const Arrow = props => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <div
         className={className}
@@ -43,10 +43,10 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
     nextArrow: <Arrow />,
     prevArrow: <Arrow />,
     beforeChange: function (currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide);
+      // console.log("before change", currentSlide, nextSlide);
     },
     afterChange: function (currentSlide) {
-      console.log("after change", currentSlide);
+      // console.log("after change", currentSlide);
     }
   };
 
@@ -54,7 +54,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
     return string.length > n ? string.substr(0, n - 1) + "..." : string;
   };
 
-  console.log(topNews);
+  // console.log(topNews);
   return (
     <>
       <div className='verticalRunners' style={{ width: width }}>
@@ -67,7 +67,7 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
             } else { image = obj.urlToImage }
             return (
 
-              <a key={key} href={obj.url} target="_blank" className="verticalRunner">
+              <a key={key} href={obj.url} target="_blank" rel="noreferrer" className="verticalRunner">
                 <div className="verticalRunner_image">
                   <img src={image} alt="" />
                 </div>

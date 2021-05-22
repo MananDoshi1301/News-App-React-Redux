@@ -1,7 +1,6 @@
 import React from 'react';
 import './SideButtons.css';
 import { articleDetails } from '../data';
-import API_KEY from '../API_KEY';
 
 const ArticleSideButtons = ({ article, setArticle }) => {
   return (

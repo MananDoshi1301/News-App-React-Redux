@@ -11,7 +11,7 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
   useEffect(() => {
     async function fetchData() {
       const request = await nyt.topstories.get(fetchUrl + '.json?api-key=' + nytKey);
-      console.log(fetchUrl + '.json?api-key=' + nytKey)
+      // console.log(fetchUrl + '.json?api-key=' + nytKey)
       setTopNews(request.data.results.slice(0, 15));
       return request;
     }
@@ -20,7 +20,7 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
   }, [fetchUrl]);
 
   const Arrow = props => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <div
         className={className}
@@ -43,10 +43,10 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
     nextArrow: <Arrow />,
     prevArrow: <Arrow />,
     beforeChange: function (currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide);
+      // console.log("before change", currentSlide, nextSlide);
     },
     afterChange: function (currentSlide) {
-      console.log("after change", currentSlide);
+      // console.log("after change", currentSlide);
     }
   };
 
@@ -69,7 +69,7 @@ const ArticleRunner = ({ fetchUrl = 'world', width = '600px', title }) => {
             }
             return (
 
-              <a key={key} href={obj.url} target="_blank" className="verticalRunner">
+              <a key={key} href={obj.url} target="_blank" rel="noreferrer"  className="verticalRunner">
                 <div className="verticalRunner_image">
                   <img src={image} alt="" height='240px' />
                 </div>

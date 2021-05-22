@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import "./LeftResult.css";
 import catDetails from "../data";
+import { Fragment } from 'react';
 
 const LeftResult = () => {
     // let genres = catDetails
@@ -57,8 +58,14 @@ const LeftResult = () => {
                         </ul>
                     </div>
                 </div> */}
-                
-                {items().map((obj)=>obj)}
+                                
+                {items().map((obj, key)=>{
+                    return (
+                        <Fragment key={key}>
+                            {obj}
+                        </Fragment>
+                    )
+                })}
                 
                 
             </div>

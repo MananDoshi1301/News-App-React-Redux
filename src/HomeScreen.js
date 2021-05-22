@@ -23,7 +23,6 @@ const HomeScreen = () => {
       />
       <div style={{ display: "flex", justifyContent: 'space-around', marginTop: '40px' }}>
         <VerticalRunner
-          title={"News"}
           fetchUrl={customHeadlines[0]}
           title={customHeadlines[1]}
         />

@@ -19,7 +19,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
     return string.length > n ? string.substr(0, n - 1) + "..." : string;
   };
 
-  console.log(topNews);
+  // console.log(topNews);
   return (
     <div className="topNewsRow">
       <h1 className="topNewsRow_title">{title}</h1>
@@ -27,7 +27,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
         {topNews.map((news, key) => {
           if (news.urlToImage) {
             return (
-              <a key={key} className="topNewsRow_card" href={news.url} target="_blank">
+              <a key={key} className="topNewsRow_card" href={news.url} target="_blank" rel="noreferrer">
                 <img
                   className={`topNewsRow_newsPoster`}
                   src={news.urlToImage}
@@ -47,6 +47,7 @@ const TopNewsRow = ({ title, fetchUrl }) => {
               </a>
             );
           }
+          return null;
         })}
       </div>
     </div>

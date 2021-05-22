@@ -20,13 +20,13 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
   }, [fetchUrl]);
 
   let art = fetchUrl.split("/")[1];
-  console.log(art);
+  // console.log(art);
 
   const artOPtions = ['Emailed', 'Shared', 'Viewed']
 
   return (
     <>
-      {console.log(userArticles)}
+      {/* {console.log(userArticles)} */}
 
       <div className="articles">
         <div className="centreResult_header">
@@ -85,7 +85,7 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
               time.getMinutes(); // timeline
 
             return (
-              <a key={key} href={obj["url"]} className="article" target="_blank">
+              <a key={key} href={obj["url"]} className="article" target="_blank" rel="noreferrer">
                 <div className="article_content">
                   <div className="article_title">
                     <h1>{obj["title"]}</h1>
@@ -107,7 +107,7 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
                   </div>
                 </div>
                 <div className="article_image">
-                  {obj["media"] && <img src={img} alt="" srcset="" />}
+                  {obj["media"] && <img src={img} alt="" />}
                 </div>
               </a>
             );

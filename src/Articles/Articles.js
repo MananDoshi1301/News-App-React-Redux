@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ScrollBackBtn from '../ScrollBackBtn';
 
 import Nav from '../Nav/Nav';
