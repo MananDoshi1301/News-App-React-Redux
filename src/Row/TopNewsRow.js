@@ -24,10 +24,10 @@ const TopNewsRow = ({ title, fetchUrl }) => {
     <div className="topNewsRow">
       <h1 className="topNewsRow_title">{title}</h1>
       <div className="topNewsRow_posters">
-        {topNews.map((news) => {
+        {topNews.map((news, key) => {
           if (news.urlToImage) {
             return (
-              <a className="topNewsRow_card" href={news.url} target="_blank">
+              <a key={key} className="topNewsRow_card" href={news.url} target="_blank">
                 <img
                   className={`topNewsRow_newsPoster`}
                   src={news.urlToImage}

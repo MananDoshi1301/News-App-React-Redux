@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { nytKey } from "../API_KEY";
 import { nyt } from "../axios";
 import "./ArticleFormat.css";
@@ -34,9 +33,9 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
           <span className='articleDetails'>Most :
             {/* {art.toUpperCase()} */}
             <ul className='articleDetails_optionList'>
-              {artOPtions.map((obj)=>{
+              {artOPtions.map((obj, key)=>{
                 return (
-                  <li onClick={()=>{
+                  <li key={key} onClick={()=>{
                     setArticle(`/${obj.toLowerCase()}/7.json`)
                   }} className={`articleDetails_listItem ${obj.toLowerCase() === art.toLowerCase()?'activeArt':''}`}>{obj}</li>
                 )
@@ -46,11 +45,11 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
           <span>TOTAL RESULTS: {userArticles.length}</span>
         </div>
         {userArticles &&
-          userArticles.map((obj) => {
+          userArticles.map((obj, key) => {
             let img;
             if (obj.media.length !== 0) {
               img = [...obj.media];
-              if (img[0]["media-metadata"].length != 0) {
+              if (img[0]["media-metadata"].length !== 0) {
                 img = img[0]["media-metadata"];
                 try {
                   img = img[2].url;
@@ -86,7 +85,7 @@ const ArticleFormat = ({ fetchUrl, setArticle }) => {
               time.getMinutes(); // timeline
 
             return (
-              <a href={obj["url"]} className="article" target="_blank">
+              <a key={key} href={obj["url"]} className="article" target="_blank">
                 <div className="article_content">
                   <div className="article_title">
                     <h1>{obj["title"]}</h1>

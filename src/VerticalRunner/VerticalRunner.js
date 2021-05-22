@@ -60,14 +60,14 @@ const VerticalRunner = ({ fetchUrl, width = '600px', title = 'News' }) => {
       <div className='verticalRunners' style={{ width: width }}>
         <h1 className="runner_title">{title.toUpperCase()}</h1>
         <Slider {...settings}>
-          {topNews.map((obj) => {
+          {topNews.map((obj, key) => {
             let image;
             if (!obj.urlToImage) {
               image = appLogo;
             } else { image = obj.urlToImage }
             return (
 
-              <a href={obj.url} target="_blank" className="verticalRunner">
+              <a key={key} href={obj.url} target="_blank" className="verticalRunner">
                 <div className="verticalRunner_image">
                   <img src={image} alt="" />
                 </div>

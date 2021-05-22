@@ -43,7 +43,7 @@ const CenterResult = ({ fetchUrl, type }) => {
         <span>TOTAL RESULTS: {news.length}</span>
       </div>
       {news &&
-        news.map((myNews) => {
+        news.map((myNews, key) => {
           const image = myNews.urlToImage ? myNews.urlToImage : appLogo;
           const title = myNews.title; //title
           const description = myNews.description; //description
@@ -66,7 +66,7 @@ const CenterResult = ({ fetchUrl, type }) => {
             time.getMinutes(); // timeline
 
           return (
-            <div className="resultCard">
+            <div key={key} className="resultCard">
               <div className="resultCard_img">
                 <img src={`${image}`} alt="" />
               </div>

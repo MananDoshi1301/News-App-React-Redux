@@ -24,9 +24,9 @@ const LeftResult = () => {
                             .filter((category) => {
                                 return category.category === genres[i];
                             })
-                            .map((category) => {
+                            .map((category, key) => {
                                 return (
-                                    <li className={`leftResult_listItem`}><Link to={`/result/${category.type}/${category.link}`} style={{display:'block'}}>{category.title}</Link></li>
+                                    <li key={key} className={`leftResult_listItem`}><Link to={`/result/${category.type}/${category.link}`} style={{display:'block'}}>{category.title}</Link></li>
                                 )
                             })}
                     </ul>
@@ -58,7 +58,7 @@ const LeftResult = () => {
                     </div>
                 </div> */}
                 
-                {items().map(obj=>obj)}
+                {items().map((obj)=>obj)}
                 
                 
             </div>

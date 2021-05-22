@@ -12,9 +12,9 @@ const SearchTiles = ({category}) => {
     category.sort(()=>Math.random() - 0.5);
     return (
         <div className="searchTile">
-            {category.map((category)=>{
+            {category.map((category, key)=>{
                 let val = randomItem();                                
-                return <Tile title={category.title} icon={category.icon} color={val} type={category.type} link={category.link} />
+                return <Tile key={key} title={category.title} icon={category.icon} color={val} type={category.type} link={category.link} />
             })}
         </div>
     )
